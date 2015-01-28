@@ -10,6 +10,13 @@
 
 @interface Home : UIViewController
 
+//Buttons
+- (IBAction)AccionBtnAlta:(id)sender;
+- (IBAction)AccionBtnBaja:(id)sender;
+- (IBAction)AccionBtnEditar:(id)sender;
+- (IBAction)AccionBtnListado:(id)sender;
+
+
 
 @end
 

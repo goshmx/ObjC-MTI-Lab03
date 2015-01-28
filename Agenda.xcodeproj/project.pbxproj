@@ -14,6 +14,13 @@
 		8FDEE1A41A78CF1300EC3762 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1A31A78CF1300EC3762 /* Images.xcassets */; };
 		8FDEE1A71A78CF1300EC3762 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1A51A78CF1300EC3762 /* LaunchScreen.xib */; };
 		8FDEE1B31A78CF1300EC3762 /* AgendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1B21A78CF1300EC3762 /* AgendaTests.m */; };
+		8FDEE1BE1A78D69B00EC3762 /* contact-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1BD1A78D69B00EC3762 /* contact-icon.png */; };
+		8FDEE1C01A78D78800EC3762 /* blur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1BF1A78D78800EC3762 /* blur.jpg */; };
+		8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C21A78D89700EC3762 /* AltaForm.m */; };
+		8FDEE1C51A78DA0A00EC3762 /* arrow-back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */; };
+		8FDEE1C81A78DBA800EC3762 /* EliminaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */; };
+		8FDEE1CB1A78DC9D00EC3762 /* EditaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */; };
+		8FDEE1CE1A78DDD000EC3762 /* ListadoForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,17 @@
 		8FDEE1AC1A78CF1300EC3762 /* AgendaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgendaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDEE1B11A78CF1300EC3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FDEE1B21A78CF1300EC3762 /* AgendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgendaTests.m; sourceTree = "<group>"; };
+		8FDEE1BD1A78D69B00EC3762 /* contact-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact-icon.png"; sourceTree = "<group>"; };
+		8FDEE1BF1A78D78800EC3762 /* blur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blur.jpg; sourceTree = "<group>"; };
+		8FDEE1C11A78D89700EC3762 /* AltaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AltaForm.h; path = ../AltaForm.h; sourceTree = "<group>"; };
+		8FDEE1C21A78D89700EC3762 /* AltaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AltaForm.m; path = ../AltaForm.m; sourceTree = "<group>"; };
+		8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-back-icon.png"; sourceTree = "<group>"; };
+		8FDEE1C61A78DBA800EC3762 /* EliminaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliminaForm.h; path = ../EliminaForm.h; sourceTree = "<group>"; };
+		8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EliminaForm.m; path = ../EliminaForm.m; sourceTree = "<group>"; };
+		8FDEE1C91A78DC9D00EC3762 /* EditaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditaForm.h; path = ../EditaForm.h; sourceTree = "<group>"; };
+		8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditaForm.m; path = ../EditaForm.m; sourceTree = "<group>"; };
+		8FDEE1CC1A78DDD000EC3762 /* ListadoForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListadoForm.h; path = ../ListadoForm.h; sourceTree = "<group>"; };
+		8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListadoForm.m; path = ../ListadoForm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,15 @@
 		8FDEE1951A78CF1300EC3762 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				8FDEE1BC1A78D68E00EC3762 /* Imagenes */,
+				8FDEE1C11A78D89700EC3762 /* AltaForm.h */,
+				8FDEE1C21A78D89700EC3762 /* AltaForm.m */,
+				8FDEE1C61A78DBA800EC3762 /* EliminaForm.h */,
+				8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */,
+				8FDEE1C91A78DC9D00EC3762 /* EditaForm.h */,
+				8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */,
+				8FDEE1CC1A78DDD000EC3762 /* ListadoForm.h */,
+				8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */,
 				8FDEE19A1A78CF1300EC3762 /* AppDelegate.h */,
 				8FDEE19B1A78CF1300EC3762 /* AppDelegate.m */,
 				8FDEE19D1A78CF1300EC3762 /* Home.h */,
@@ -117,6 +144,16 @@
 				8FDEE1B11A78CF1300EC3762 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FDEE1BC1A78D68E00EC3762 /* Imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */,
+				8FDEE1BF1A78D78800EC3762 /* blur.jpg */,
+				8FDEE1BD1A78D69B00EC3762 /* contact-icon.png */,
+			);
+			name = Imagenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FDEE1A21A78CF1300EC3762 /* Main.storyboard in Resources */,
+				8FDEE1C01A78D78800EC3762 /* blur.jpg in Resources */,
+				8FDEE1BE1A78D69B00EC3762 /* contact-icon.png in Resources */,
+				8FDEE1C51A78DA0A00EC3762 /* arrow-back-icon.png in Resources */,
 				8FDEE1A71A78CF1300EC3762 /* LaunchScreen.xib in Resources */,
 				8FDEE1A41A78CF1300EC3762 /* Images.xcassets in Resources */,
 			);
@@ -220,8 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */,
+				8FDEE1CB1A78DC9D00EC3762 /* EditaForm.m in Sources */,
+				8FDEE1C81A78DBA800EC3762 /* EliminaForm.m in Sources */,
 				8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */,
 				8FDEE1991A78CF1300EC3762 /* main.m in Sources */,
+				8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */,
+				8FDEE1CE1A78DDD000EC3762 /* ListadoForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
