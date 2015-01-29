@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA571D1A7A123B007C7808 /* DBManager.m */; };
+		8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */; };
 		8FDEE1991A78CF1300EC3762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1981A78CF1300EC3762 /* main.m */; };
 		8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19B1A78CF1300EC3762 /* AppDelegate.m */; };
 		8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19E1A78CF1300EC3762 /* Home.m */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8FBA571C1A7A123B007C7808 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		8FBA571D1A7A123B007C7808 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8FDEE1931A78CF1300EC3762 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDEE1971A78CF1300EC3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FDEE1981A78CF1300EC3762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +84,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FBA571B1A7A1215007C7808 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA571C1A7A123B007C7808 /* DBManager.h */,
+				8FBA571D1A7A123B007C7808 /* DBManager.m */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		8FDEE18A1A78CF1300EC3762 = {
 			isa = PBXGroup;
 			children = (
+				8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */,
+				8FBA571B1A7A1215007C7808 /* Libraries */,
 				8FDEE1951A78CF1300EC3762 /* Agenda */,
 				8FDEE1AF1A78CF1300EC3762 /* AgendaTests */,
 				8FDEE1941A78CF1300EC3762 /* Products */,
@@ -266,6 +283,7 @@
 				8FDEE1991A78CF1300EC3762 /* main.m in Sources */,
 				8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */,
 				8FDEE1CE1A78DDD000EC3762 /* ListadoForm.m in Sources */,
+				8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +476,7 @@
 				8FDEE1B81A78CF1400EC3762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FDEE1B91A78CF1400EC3762 /* Build configuration list for PBXNativeTarget "AgendaTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +485,7 @@
 				8FDEE1BB1A78CF1400EC3762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
