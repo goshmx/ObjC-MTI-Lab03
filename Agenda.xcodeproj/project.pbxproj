@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA571D1A7A123B007C7808 /* DBManager.m */; };
 		8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */; };
+		8FBA57221A7A3A1B007C7808 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA57211A7A3A1B007C7808 /* camera-icon.png */; };
 		8FDEE1991A78CF1300EC3762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1981A78CF1300EC3762 /* main.m */; };
 		8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19B1A78CF1300EC3762 /* AppDelegate.m */; };
 		8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19E1A78CF1300EC3762 /* Home.m */; };
@@ -39,6 +40,7 @@
 		8FBA571C1A7A123B007C7808 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		8FBA571D1A7A123B007C7808 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8FBA57211A7A3A1B007C7808 /* camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-icon.png"; path = "../../../../Downloads/camera-icon.png"; sourceTree = "<group>"; };
 		8FDEE1931A78CF1300EC3762 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDEE1971A78CF1300EC3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FDEE1981A78CF1300EC3762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		8FDEE1BC1A78D68E00EC3762 /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				8FBA57211A7A3A1B007C7808 /* camera-icon.png */,
 				8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */,
 				8FDEE1BF1A78D78800EC3762 /* blur.jpg */,
 				8FDEE1BD1A78D69B00EC3762 /* contact-icon.png */,
@@ -256,6 +259,7 @@
 				8FDEE1A21A78CF1300EC3762 /* Main.storyboard in Resources */,
 				8FDEE1C01A78D78800EC3762 /* blur.jpg in Resources */,
 				8FDEE1BE1A78D69B00EC3762 /* contact-icon.png in Resources */,
+				8FBA57221A7A3A1B007C7808 /* camera-icon.png in Resources */,
 				8FDEE1C51A78DA0A00EC3762 /* arrow-back-icon.png in Resources */,
 				8FDEE1A71A78CF1300EC3762 /* LaunchScreen.xib in Resources */,
 				8FDEE1A41A78CF1300EC3762 /* Images.xcassets in Resources */,

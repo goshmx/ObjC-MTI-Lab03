@@ -9,8 +9,8 @@
 #import "DBManager.h"
 
 //Inicializar valores
-NSString *dbname = @"gamepush2.db";
-const char *createStatment = "create table if not exists pushresults (pushid integer primary key AUTOINCREMENT, score integer, fechahora text)";
+NSString *dbname = @"agenda.db";
+const char *createStatment = "create table if not exists agenda (pushid integer primary key AUTOINCREMENT, score integer, fechahora text)";
 
 static DBManager *sharedInstance = nil;
 static sqlite3 *database = nil;
