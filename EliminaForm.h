@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBManager.h"
 
-@interface EliminaForm : UIViewController
+@interface EliminaForm : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+
 - (IBAction)AccionBtnRegresar:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tblElimina;
 
 @end

@@ -22,6 +22,10 @@ UIAlertView *alert;
     CALayer * l = [self.Imagen layer];
     [l setMasksToBounds:YES];
     [l setCornerRadius:85.0];
+    
+    self.inputNombre.delegate = self;
+    self.inputEstado.delegate = self;
+    self.inputYoutube.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -50,6 +54,17 @@ UIAlertView *alert;
                              cancelButtonTitle:@"Cancelar"
                              otherButtonTitles:@"Camara", @"Carrete", nil];
     [alert show];
+}
+
+- (IBAction)guardarInfo:(id)sender {
+    NSString *nombre = self.inputNombre.text;
+    NSString *estado = self.inputEstado.text;
+    NSString *youtube = self.inputYoutube.text;
+    UIImage* image = [self.Imagen image];
+    NSData *imageData=UIImagePNGRepresentation(image);
+    NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
+    
+    [[DBManager getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -93,8 +108,56 @@ UIAlertView *alert;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField:textField up:YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField:textField up:NO];
+}
+
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    int animatedDistance;
+    int moveUpValue = textField.frame.origin.y+ textField.frame.size.height;
+    UIInterfaceOrientation orientation =
+    [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        
+        animatedDistance = 216-(460-moveUpValue-5);
+    }
+    else
+    {
+        animatedDistance = 162-(320-moveUpValue-5);
+    }
+    
+    if(animatedDistance>0)
+    {
+        const int movementDistance = animatedDistance;
+        const float movementDuration = 0.3f;
+        int movement = (up ? -movementDistance : movementDistance);
+        [UIView beginAnimations: nil context: nil];
+        [UIView setAnimationBeginsFromCurrentState: YES];
+        [UIView setAnimationDuration: movementDuration];
+        self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+        [UIView commitAnimations];
+    }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 @end

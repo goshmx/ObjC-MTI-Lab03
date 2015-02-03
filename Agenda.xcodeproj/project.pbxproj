@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5058B11A80C5DB00ACD3BC /* PersonaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5058B01A80C5DB00ACD3BC /* PersonaList.m */; };
+		8FADCF7D1A7C5DA3006822CA /* 1422686825_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FADCF7C1A7C5DA3006822CA /* 1422686825_camera.png */; };
 		8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA571D1A7A123B007C7808 /* DBManager.m */; };
 		8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */; };
-		8FBA57221A7A3A1B007C7808 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA57211A7A3A1B007C7808 /* camera-icon.png */; };
 		8FDEE1991A78CF1300EC3762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1981A78CF1300EC3762 /* main.m */; };
 		8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19B1A78CF1300EC3762 /* AppDelegate.m */; };
 		8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE19E1A78CF1300EC3762 /* Home.m */; };
@@ -37,10 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F5058AF1A80C5DB00ACD3BC /* PersonaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonaList.h; sourceTree = "<group>"; };
+		8F5058B01A80C5DB00ACD3BC /* PersonaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonaList.m; sourceTree = "<group>"; };
+		8FADCF7C1A7C5DA3006822CA /* 1422686825_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1422686825_camera.png; path = ../../../../Downloads/1422686825_camera.png; sourceTree = "<group>"; };
 		8FBA571C1A7A123B007C7808 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		8FBA571D1A7A123B007C7808 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		8FBA57211A7A3A1B007C7808 /* camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-icon.png"; path = "../../../../Downloads/camera-icon.png"; sourceTree = "<group>"; };
 		8FDEE1931A78CF1300EC3762 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDEE1971A78CF1300EC3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FDEE1981A78CF1300EC3762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +89,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F5058AB1A80C54700ACD3BC /* Customize */ = {
+			isa = PBXGroup;
+			children = (
+				8F5058AF1A80C5DB00ACD3BC /* PersonaList.h */,
+				8F5058B01A80C5DB00ACD3BC /* PersonaList.m */,
+			);
+			name = Customize;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		8FBA571B1A7A1215007C7808 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		8FDEE1951A78CF1300EC3762 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				8F5058AB1A80C54700ACD3BC /* Customize */,
 				8FDEE1BC1A78D68E00EC3762 /* Imagenes */,
 				8FDEE1C11A78D89700EC3762 /* AltaForm.h */,
 				8FDEE1C21A78D89700EC3762 /* AltaForm.m */,
@@ -168,7 +182,7 @@
 		8FDEE1BC1A78D68E00EC3762 /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
-				8FBA57211A7A3A1B007C7808 /* camera-icon.png */,
+				8FADCF7C1A7C5DA3006822CA /* 1422686825_camera.png */,
 				8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */,
 				8FDEE1BF1A78D78800EC3762 /* blur.jpg */,
 				8FDEE1BD1A78D69B00EC3762 /* contact-icon.png */,
@@ -225,6 +239,7 @@
 				TargetAttributes = {
 					8FDEE1921A78CF1300EC3762 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QXF33N93KH;
 					};
 					8FDEE1AB1A78CF1300EC3762 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -259,10 +274,10 @@
 				8FDEE1A21A78CF1300EC3762 /* Main.storyboard in Resources */,
 				8FDEE1C01A78D78800EC3762 /* blur.jpg in Resources */,
 				8FDEE1BE1A78D69B00EC3762 /* contact-icon.png in Resources */,
-				8FBA57221A7A3A1B007C7808 /* camera-icon.png in Resources */,
 				8FDEE1C51A78DA0A00EC3762 /* arrow-back-icon.png in Resources */,
 				8FDEE1A71A78CF1300EC3762 /* LaunchScreen.xib in Resources */,
 				8FDEE1A41A78CF1300EC3762 /* Images.xcassets in Resources */,
+				8FADCF7D1A7C5DA3006822CA /* 1422686825_camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +298,7 @@
 				8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */,
 				8FDEE1CB1A78DC9D00EC3762 /* EditaForm.m in Sources */,
 				8FDEE1C81A78DBA800EC3762 /* EliminaForm.m in Sources */,
+				8F5058B11A80C5DB00ACD3BC /* PersonaList.m in Sources */,
 				8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */,
 				8FDEE1991A78CF1300EC3762 /* main.m in Sources */,
 				8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */,

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBManager.h"
 
-@interface AltaForm : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AltaForm : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 
 //Button
 - (IBAction)AccionBtnRegresar:(id)sender;
@@ -21,8 +22,11 @@
 //ImageView
 @property (strong, nonatomic) IBOutlet UIImageView *Imagen;
 
+//TableView
+
 //eventos
 - (IBAction)actionFoto:(id)sender;
+- (IBAction)guardarInfo:(id)sender;
 
 
 @end

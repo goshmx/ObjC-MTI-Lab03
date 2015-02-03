@@ -10,7 +10,7 @@
 
 //Inicializar valores
 NSString *dbname = @"agenda.db";
-const char *createStatment = "create table if not exists agenda (pushid integer primary key AUTOINCREMENT, score integer, fechahora text)";
+const char *createStatment = "create table if not exists agenda (agendaid integer primary key AUTOINCREMENT, nombre text, estado text, youtube text, foto blob)";
 
 static DBManager *sharedInstance = nil;
 static sqlite3 *database = nil;
@@ -83,6 +83,33 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
+- (BOOL) insertaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char* sqliteQuery = "INSERT INTO agenda (nombre, estado, youtube, foto) VALUES (?, ?, ?, ?)";
+        sqlite3_stmt* statement;
+        if( sqlite3_prepare_v2(database, sqliteQuery,-1, &statement, NULL) == SQLITE_OK ){
+            sqlite3_bind_text(statement, 1, [nombre UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 2, [estado UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 3, [youtube UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_blob(statement, 4, [foto bytes], [foto length], SQLITE_TRANSIENT);
+            if (sqlite3_step(statement) == SQLITE_DONE){
+                sqlite3_reset(statement);
+                NSLog(@"Registro Insertado");
+                return YES;
+            }else{
+                return NO;
+            }
+        } else {
+            NSLog(@"Registro FALLO (%s)", sqlite3_errmsg(database));
+            sqlite3_reset(statement);
+            return NO;
+        }
+    }
+    return NO;
+}
+
+
 /*!
  * @brief Funcion para consultar mediante un querystring en la base de datos.
  * @param query cadena con el query SQL para ejecutar.
@@ -90,7 +117,7 @@ static sqlite3_stmt *statement = nil;
  * @code NSString *querySQL = [NSString stringWithFormat: @"select score, fechahora from pushresults order by score DESC"];
  */
 - (NSMutableArray*) listDB:(NSString*)query;
-{
+{    
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK){
         const char *query_stmt = [query UTF8String];
@@ -99,17 +126,23 @@ static sqlite3_stmt *statement = nil;
             int columns = sqlite3_column_count(statement);
             while (sqlite3_step(statement) == SQLITE_ROW){
                 NSMutableArray *arc = [[NSMutableArray alloc] initWithCapacity:columns];
-                for(int i=0; i < columns; i++){
-                    if (sqlite3_column_text(statement, i) == NULL)
+                for(int i=0; i < (columns-1); i++){
+                    if (sqlite3_column_text(statement, i) == NULL){
                         [arc addObject:@""];
-                    else
+                    }
+                    else{
                         [arc addObject:[NSString stringWithCString:(char *)sqlite3_column_text(statement, i)
                                                           encoding:NSUTF8StringEncoding]
                          ];
+                    }
+                }
+                if (sqlite3_column_blob(statement, 3) != NULL) {
+                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 3) length:sqlite3_column_bytes(statement, 3)];
+                    [arc addObject:dataimg];
                 }
                 [ar_result addObject:arc];
             }
-            sqlite3_reset(statement);
+            sqlite3_reset(statement);           
             return ar_result;
         }
     }
@@ -117,3 +150,10 @@ static sqlite3_stmt *statement = nil;
 }
 
 @end
+
+
+
+
+
+
+
