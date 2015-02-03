@@ -136,8 +136,8 @@ static sqlite3_stmt *statement = nil;
                          ];
                     }
                 }
-                if (sqlite3_column_blob(statement, 3) != NULL) {
-                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 3) length:sqlite3_column_bytes(statement, 3)];
+                if (sqlite3_column_blob(statement, 4) != NULL) {
+                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 4) length:sqlite3_column_bytes(statement, 4)];
                     [arc addObject:dataimg];
                 }
                 [ar_result addObject:arc];

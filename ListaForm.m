@@ -6,16 +6,18 @@
 //  Copyright (c) 2015 TRON. All rights reserved.
 //
 
-#import "EliminaForm.h"
+#import "ListaForm.h"
 #import "PersonaList.h"
 
 NSMutableArray *datos;
+NSString *idTemp;
+NSString *idSelect;
 
-@interface EliminaForm ()
+@interface ListaForm ()
 
 @end
 
-@implementation EliminaForm
+@implementation ListaForm
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,8 +33,7 @@ NSMutableArray *datos;
 
 - (void)initController{
     
-    datos = [[DBManager getSharedInstance]listDB:@"select nombre, estado, youtube, foto from agenda"];
-    NSLog(@"%@", datos);
+    datos = [[DBManager getSharedInstance]listDB:@"select agendaid, nombre, estado, youtube, foto from agenda"];
 }
 
 /*
@@ -84,9 +85,9 @@ NSMutableArray *datos;
     }
     
     NSMutableArray *dato = datos[indexPath.row];
-    cell.nombre.text = [dato objectAtIndex:0];
-    cell.estado.text = [dato objectAtIndex:1];
-    cell.foto.image = [UIImage imageWithData:[dato objectAtIndex:3]];
+    cell.nombre.text = [dato objectAtIndex:1];
+    cell.estado.text = [dato objectAtIndex:2];
+    cell.foto.image = [UIImage imageWithData:[dato objectAtIndex:4]];
     return cell;
 }
 
@@ -94,7 +95,45 @@ NSMutableArray *datos;
 //-------------------------------------------------------------------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSMutableArray *dato = datos[indexPath.row];
     
+    NSString *nombreTemp;
+    
+    idSelect = [dato objectAtIndex:0];
+    NSLog(idSelect);
+    nombreTemp = [[dato objectAtIndex:1] stringByAppendingString: @" fué seleccionado"];
+    
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Seleccione accion"
+                                                        message:nombreTemp
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancelar"
+                                              otherButtonTitles:@"Eliminar",@"Editar",@"Compartir",@"Ver mas", nil];
+        [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Alert buttons pressed");
+    
+    if(buttonIndex == 0)
+    {
+        NSLog(@"Cancelar");
+    }
+    else if(buttonIndex == 1)
+    {
+        NSLog(@"Borrar");
+        NSString *query = [NSString stringWithFormat: @"DELETE FROM agenda WHERE agendaid=%@;", idTemp];
+        if([[DBManager getSharedInstance]saveDB:query]){
+            [self initController];
+            self.tblElimina.reloadData;
+        }
+        
+       
+    }
+   
 }
 
 

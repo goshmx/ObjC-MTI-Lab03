@@ -22,9 +22,7 @@
 		8FDEE1C01A78D78800EC3762 /* blur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1BF1A78D78800EC3762 /* blur.jpg */; };
 		8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C21A78D89700EC3762 /* AltaForm.m */; };
 		8FDEE1C51A78DA0A00EC3762 /* arrow-back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */; };
-		8FDEE1C81A78DBA800EC3762 /* EliminaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */; };
-		8FDEE1CB1A78DC9D00EC3762 /* EditaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */; };
-		8FDEE1CE1A78DDD000EC3762 /* ListadoForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */; };
+		8FDEE1C81A78DBA800EC3762 /* ListaForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1C71A78DBA800EC3762 /* ListaForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,12 +60,8 @@
 		8FDEE1C11A78D89700EC3762 /* AltaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AltaForm.h; path = ../AltaForm.h; sourceTree = "<group>"; };
 		8FDEE1C21A78D89700EC3762 /* AltaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AltaForm.m; path = ../AltaForm.m; sourceTree = "<group>"; };
 		8FDEE1C41A78DA0A00EC3762 /* arrow-back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-back-icon.png"; sourceTree = "<group>"; };
-		8FDEE1C61A78DBA800EC3762 /* EliminaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliminaForm.h; path = ../EliminaForm.h; sourceTree = "<group>"; };
-		8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EliminaForm.m; path = ../EliminaForm.m; sourceTree = "<group>"; };
-		8FDEE1C91A78DC9D00EC3762 /* EditaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditaForm.h; path = ../EditaForm.h; sourceTree = "<group>"; };
-		8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditaForm.m; path = ../EditaForm.m; sourceTree = "<group>"; };
-		8FDEE1CC1A78DDD000EC3762 /* ListadoForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListadoForm.h; path = ../ListadoForm.h; sourceTree = "<group>"; };
-		8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListadoForm.m; path = ../ListadoForm.m; sourceTree = "<group>"; };
+		8FDEE1C61A78DBA800EC3762 /* ListaForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaForm.h; path = ../ListaForm.h; sourceTree = "<group>"; };
+		8FDEE1C71A78DBA800EC3762 /* ListaForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaForm.m; path = ../ListaForm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +129,8 @@
 				8FDEE1BC1A78D68E00EC3762 /* Imagenes */,
 				8FDEE1C11A78D89700EC3762 /* AltaForm.h */,
 				8FDEE1C21A78D89700EC3762 /* AltaForm.m */,
-				8FDEE1C61A78DBA800EC3762 /* EliminaForm.h */,
-				8FDEE1C71A78DBA800EC3762 /* EliminaForm.m */,
-				8FDEE1C91A78DC9D00EC3762 /* EditaForm.h */,
-				8FDEE1CA1A78DC9D00EC3762 /* EditaForm.m */,
-				8FDEE1CC1A78DDD000EC3762 /* ListadoForm.h */,
-				8FDEE1CD1A78DDD000EC3762 /* ListadoForm.m */,
+				8FDEE1C61A78DBA800EC3762 /* ListaForm.h */,
+				8FDEE1C71A78DBA800EC3762 /* ListaForm.m */,
 				8FDEE19A1A78CF1300EC3762 /* AppDelegate.h */,
 				8FDEE19B1A78CF1300EC3762 /* AppDelegate.m */,
 				8FDEE19D1A78CF1300EC3762 /* Home.h */,
@@ -296,13 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FDEE19F1A78CF1300EC3762 /* Home.m in Sources */,
-				8FDEE1CB1A78DC9D00EC3762 /* EditaForm.m in Sources */,
-				8FDEE1C81A78DBA800EC3762 /* EliminaForm.m in Sources */,
+				8FDEE1C81A78DBA800EC3762 /* ListaForm.m in Sources */,
 				8F5058B11A80C5DB00ACD3BC /* PersonaList.m in Sources */,
 				8FDEE19C1A78CF1300EC3762 /* AppDelegate.m in Sources */,
 				8FDEE1991A78CF1300EC3762 /* main.m in Sources */,
 				8FDEE1C31A78D89700EC3762 /* AltaForm.m in Sources */,
-				8FDEE1CE1A78DDD000EC3762 /* ListadoForm.m in Sources */,
 				8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

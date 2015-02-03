@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
+extern NSString *idSelect;
+
 @interface DBManager : NSObject
 {
     NSString *databasePath;
