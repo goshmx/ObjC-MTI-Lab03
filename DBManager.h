@@ -21,6 +21,7 @@ extern NSString *idSelect;
 -(BOOL)crearDB;
 -(BOOL)saveDB:(NSString*)query;
 -(NSMutableArray*)listDB:(NSString*)query;
+-(NSMutableArray*)consultaDB:(NSString*)query;
 -(BOOL)insertaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto;
 
 @end

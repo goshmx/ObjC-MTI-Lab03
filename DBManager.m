@@ -149,6 +149,38 @@ static sqlite3_stmt *statement = nil;
     return nil;
 }
 
+
+- (NSMutableArray*) consultaDB:(NSString*)query;
+{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char *query_stmt = [query UTF8String];        
+        if (sqlite3_prepare_v2(database,query_stmt, -1, &statement, NULL) == SQLITE_OK){
+            int columns = sqlite3_column_count(statement);
+            NSMutableArray *arc = [[NSMutableArray alloc] initWithCapacity:columns];
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                                for(int i=0; i < (columns-1); i++){
+                    if (sqlite3_column_text(statement, i) == NULL){
+                        [arc addObject:@""];
+                    }
+                    else{
+                        [arc addObject:[NSString stringWithCString:(char *)sqlite3_column_text(statement, i)
+                                                          encoding:NSUTF8StringEncoding]
+                         ];
+                    }
+                }
+                if (sqlite3_column_blob(statement, 4) != NULL) {
+                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 4) length:sqlite3_column_bytes(statement, 4)];
+                    [arc addObject:dataimg];
+                }
+            }
+            sqlite3_reset(statement);
+            return arc;
+        }
+    }
+    return nil;
+}
+
 @end
 
 

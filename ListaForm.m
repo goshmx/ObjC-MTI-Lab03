@@ -130,8 +130,9 @@ NSString *idSelect;
             [self initController];
             self.tblElimina.reloadData;
         }
-        
-       
+    }
+    else if(buttonIndex == 4){
+        [self performSegueWithIdentifier:@"sagaListaMostrar" sender:self];
     }
    
 }
