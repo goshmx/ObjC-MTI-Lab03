@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import <Twitter/Twitter.h>
 
 @interface ListaForm : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 

@@ -145,6 +145,7 @@
                         <outlet property="tblElimina" destination="Wjm-cp-Vrm" id="cPR-ov-FkI"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="SagaEliminarHome" id="8DW-ji-KZe"/>
                         <segue destination="u0C-7S-lOj" kind="modal" identifier="sagaListaMostrar" id="Aep-cw-Tdb"/>
+                        <segue destination="3Fm-ug-PKH" kind="modal" identifier="sagaListaAlta" id="Amt-tg-GFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRN-jY-AK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,8 +249,8 @@
                                     <action selector="AccionBtnRegresar:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="jGC-bQ-2GB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nuevo Registro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JL-7Z-yvI">
-                                <rect key="frame" x="77" y="42" width="166" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nuevo Registro" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JL-7Z-yvI">
+                                <rect key="frame" x="138" y="56" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -301,16 +302,42 @@
                                     <action selector="actionFoto:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="oTT-mb-ToS"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-ZK-1UX">
+                                <rect key="frame" x="43" y="472" width="235" height="55"/>
+                                <color key="backgroundColor" red="0.24313725490196078" green="0.70588235294117652" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Actualizar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actualizarInfo:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="7sW-Tj-EwR"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcU-rX-xIu" userLabel="BotonRegresarLista">
+                                <rect key="frame" x="15" y="49" width="64" height="64"/>
+                                <state key="normal" image="arrow-back-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AccionBtnLista:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="3jw-3B-tp2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="Imagen" destination="qoH-gU-UjY" id="L1S-d2-TZx"/>
+                        <outlet property="btnActualizar" destination="fvR-ZK-1UX" id="zXn-r8-p9R"/>
+                        <outlet property="btnGuardar" destination="e3E-I7-KFH" id="7hp-h5-KOJ"/>
+                        <outlet property="btnRegresarHome" destination="aNw-B1-m9m" id="QXz-Qw-vKs"/>
+                        <outlet property="btnRegresarLista" destination="wcU-rX-xIu" id="EMF-A7-hcN"/>
                         <outlet property="inputEstado" destination="n5u-aJ-KFg" id="ABr-KV-Mco"/>
                         <outlet property="inputNombre" destination="LLX-qu-xMi" id="DKh-ku-FzK"/>
                         <outlet property="inputYoutube" destination="0an-C1-Yma" id="sVD-3b-J4z"/>
+                        <outlet property="labelTitulo" destination="3JL-7Z-yvI" id="6Ce-CR-83h"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="SagaAltaHome" id="BeO-xh-56r"/>
+                        <segue destination="VYO-Zv-B8E" kind="modal" identifier="sagaAltaLista" id="kZk-U8-FNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Sn-1G-xJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,7 +352,8 @@
         <image name="contact-icon.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b4u-qk-pvd"/>
-        <segue reference="8DW-ji-KZe"/>
+        <segue reference="kZk-U8-FNW"/>
+        <segue reference="0iE-1D-ggQ"/>
+        <segue reference="BeO-xh-56r"/>
     </inferredMetricsTieBreakers>
 </document>

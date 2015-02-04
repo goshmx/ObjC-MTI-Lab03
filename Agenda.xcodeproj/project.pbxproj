@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8F5058B11A80C5DB00ACD3BC /* PersonaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5058B01A80C5DB00ACD3BC /* PersonaList.m */; };
 		8FA6A0D41A816930009D0A0E /* MostrarForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA6A0D31A816930009D0A0E /* MostrarForm.m */; };
+		8FA6A0D61A81C724009D0A0E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA6A0D51A81C724009D0A0E /* Social.framework */; };
+		8FA6A0D81A81C731009D0A0E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA6A0D71A81C731009D0A0E /* Twitter.framework */; };
+		8FA6A0DA1A81C73B009D0A0E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA6A0D91A81C73B009D0A0E /* Accounts.framework */; };
 		8FADCF7D1A7C5DA3006822CA /* 1422686825_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FADCF7C1A7C5DA3006822CA /* 1422686825_camera.png */; };
 		8FBA571E1A7A123B007C7808 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA571D1A7A123B007C7808 /* DBManager.m */; };
 		8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */; };
@@ -41,6 +44,9 @@
 		8F5058B01A80C5DB00ACD3BC /* PersonaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonaList.m; sourceTree = "<group>"; };
 		8FA6A0D21A816930009D0A0E /* MostrarForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostrarForm.h; sourceTree = "<group>"; };
 		8FA6A0D31A816930009D0A0E /* MostrarForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostrarForm.m; sourceTree = "<group>"; };
+		8FA6A0D51A81C724009D0A0E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8FA6A0D71A81C731009D0A0E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		8FA6A0D91A81C73B009D0A0E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8FADCF7C1A7C5DA3006822CA /* 1422686825_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1422686825_camera.png; path = ../../../../Downloads/1422686825_camera.png; sourceTree = "<group>"; };
 		8FBA571C1A7A123B007C7808 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		8FBA571D1A7A123B007C7808 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -72,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA6A0DA1A81C73B009D0A0E /* Accounts.framework in Frameworks */,
+				8FA6A0D81A81C731009D0A0E /* Twitter.framework in Frameworks */,
+				8FA6A0D61A81C724009D0A0E /* Social.framework in Frameworks */,
 				8FBA57201A7A126A007C7808 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +117,9 @@
 		8FDEE18A1A78CF1300EC3762 = {
 			isa = PBXGroup;
 			children = (
+				8FA6A0D91A81C73B009D0A0E /* Accounts.framework */,
+				8FA6A0D71A81C731009D0A0E /* Twitter.framework */,
+				8FA6A0D51A81C724009D0A0E /* Social.framework */,
 				8FBA571F1A7A126A007C7808 /* libsqlite3.dylib */,
 				8FBA571B1A7A1215007C7808 /* Libraries */,
 				8FDEE1951A78CF1300EC3762 /* Agenda */,

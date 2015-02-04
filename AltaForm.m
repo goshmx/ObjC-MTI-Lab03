@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 UIAlertView *alert;
+NSString *idTemp;
 
 @interface AltaForm ()
 
@@ -27,6 +28,23 @@ UIAlertView *alert;
     self.inputEstado.delegate = self;
     self.inputYoutube.delegate = self;
     // Do any additional setup after loading the view.
+    
+    if(idTemp != nil){
+        NSLog(idTemp);
+        self.labelTitulo.text = @"Editar Registro";
+        self.btnGuardar.hidden = YES;
+        self.btnActualizar.hidden = NO;
+        self.btnRegresarLista.hidden = NO;
+        self.btnRegresarHome.hidden = YES;
+        
+        NSMutableArray *dato;
+        dato = [[DBManager getSharedInstance]consultaDB:[NSString stringWithFormat: @"select agendaid, nombre, estado, youtube, foto FROM agenda WHERE agendaid=%@;", idSelect]];
+        self.inputNombre.text = [dato objectAtIndex:1];
+        self.inputEstado.text = [dato objectAtIndex:2];
+        self.inputYoutube.text = [dato objectAtIndex:3];
+        self.Imagen.image = [UIImage imageWithData:[dato objectAtIndex:4]];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +65,10 @@ UIAlertView *alert;
 - (IBAction)AccionBtnRegresar:(id)sender {
     [self performSegueWithIdentifier:@"SagaAltaHome" sender:self];
 }
+
+- (IBAction)AccionBtnLista:(id)sender {
+    [self performSegueWithIdentifier:@"sagaAltaLista" sender:self];
+}
 - (IBAction)actionFoto:(id)sender {
     alert = [[UIAlertView alloc] initWithTitle:@"Fotografia"
                                        message:@"Que desea hacer?"
@@ -64,7 +86,22 @@ UIAlertView *alert;
     NSData *imageData=UIImagePNGRepresentation(image);
     NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
     
-    [[DBManager getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData];
+    if([[DBManager getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData]){
+    [self performSegueWithIdentifier:@"sagaAltaLista" sender:self];
+    }
+}
+
+- (IBAction)actualizarInfo:(id)sender {
+    NSString *nombre = self.inputNombre.text;
+    NSString *estado = self.inputEstado.text;
+    NSString *youtube = self.inputYoutube.text;
+    UIImage* image = [self.Imagen image];
+    NSData *imageData=UIImagePNGRepresentation(image);
+    NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
+    
+    if([[DBManager getSharedInstance]actualizaDB:nombre estado:estado youtube:youtube foto:imageData idagenda:idTemp]){
+    [self performSegueWithIdentifier:@"sagaAltaLista" sender:self];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

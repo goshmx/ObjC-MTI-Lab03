@@ -12,6 +12,7 @@
 NSMutableArray *datos;
 NSString *idTemp;
 NSString *idSelect;
+int indice;
 
 @interface ListaForm ()
 
@@ -96,11 +97,12 @@ NSString *idSelect;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSMutableArray *dato = datos[indexPath.row];
+    indice = indexPath.row;
     
     NSString *nombreTemp;
     
     idSelect = [dato objectAtIndex:0];
-    NSLog(idSelect);
+    idTemp = [dato objectAtIndex:0];
     nombreTemp = [[dato objectAtIndex:1] stringByAppendingString: @" fué seleccionado"];
     
     
@@ -126,10 +128,33 @@ NSString *idSelect;
     {
         NSLog(@"Borrar");
         NSString *query = [NSString stringWithFormat: @"DELETE FROM agenda WHERE agendaid=%@;", idTemp];
+        NSLog(query);
         if([[DBManager getSharedInstance]saveDB:query]){
             [self initController];
             self.tblElimina.reloadData;
         }
+    }
+    else if(buttonIndex == 2){
+        [self performSegueWithIdentifier:@"sagaListaAlta" sender:self];
+    }
+    else if(buttonIndex == 3){
+        NSMutableArray *dato = datos[indice];
+        
+        NSString                    *strMsg;
+        NSArray                     *activityItems;
+        UIImage                     *imgShare;
+        UIActivityViewController    *actVC;
+        
+        imgShare =  [UIImage imageWithData:[dato objectAtIndex:4]];
+        strMsg = [NSString stringWithFormat: @"Comparti un contacto, se llama %@ y su estado es: %@", [dato objectAtIndex:1], [dato objectAtIndex:2]];
+        
+        activityItems = @[imgShare, strMsg];
+        
+        //Init activity view controller
+        actVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+        actVC.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeAirDrop, nil];
+        
+        [self presentViewController:actVC animated:YES completion:nil];
     }
     else if(buttonIndex == 4){
         [self performSegueWithIdentifier:@"sagaListaMostrar" sender:self];
