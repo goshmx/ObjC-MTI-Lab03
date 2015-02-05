@@ -208,6 +208,51 @@ static sqlite3_stmt *statement = nil;
     return nil;
 }
 
+-(NSMutableArray*) executeQueryWithString:(NSString*)querySQL;
+{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
+    {
+        const char *query_stmt = [querySQL UTF8String];
+        NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database,query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            int intColumnCount = sqlite3_column_count(statement);
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                NSMutableArray *msRec = [[NSMutableArray alloc]init];
+                for (int intCol=0; intCol < intColumnCount; intCol++) {
+                    switch (sqlite3_column_type(statement, intCol)) {
+                        case SQLITE_NULL:
+                            [msRec addObject:nil];
+                        case SQLITE_INTEGER:
+                            [msRec addObject:[[NSNumber alloc] initWithInt: sqlite3_column_int(statement, intCol)]];
+                            break;
+                        case SQLITE_FLOAT:
+                            [msRec addObject:[[NSNumber alloc] initWithFloat: sqlite3_column_double(statement, intCol)]];
+                            break;
+                        case SQLITE_TEXT:
+                            [msRec addObject:[[NSString alloc ] initWithUTF8String:(const char *)sqlite3_column_text(statement, intCol)]];
+                            break;
+                        case SQLITE_BLOB:
+                            [msRec addObject:[[NSData alloc] initWithBytes:sqlite3_column_blob(statement, intCol) length:sqlite3_column_bytes(statement, intCol)]];
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    
+                }
+                [resultArray addObject:msRec];
+            }
+            sqlite3_reset(statement);
+            return resultArray;
+        }
+    }
+    return nil;
+    
+}
+
 @end
 
 

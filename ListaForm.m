@@ -8,6 +8,7 @@
 
 #import "ListaForm.h"
 #import "PersonaList.h"
+#import <QuartzCore/QuartzCore.h>
 
 NSMutableArray *datos;
 NSString *idTemp;
@@ -89,6 +90,9 @@ int indice;
     cell.nombre.text = [dato objectAtIndex:1];
     cell.estado.text = [dato objectAtIndex:2];
     cell.foto.image = [UIImage imageWithData:[dato objectAtIndex:4]];
+    CALayer * l = [cell.foto layer];
+    [l setMasksToBounds:YES];
+    [l setCornerRadius:30.0];
     return cell;
 }
 

@@ -85,9 +85,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xY-IN-fqL" id="zDV-p9-3Gy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq5-cG-I06" userLabel="Foto">
-                                                    <rect key="frame" x="17" y="2" width="60" height="60"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMh-Uc-ykX" userLabel="Nombre">
                                                     <rect key="frame" x="119" y="8" width="203" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -100,6 +97,9 @@
                                                     <color key="textColor" red="0.54807844065656564" green="0.54807844065656564" blue="0.54807844065656564" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq5-cG-I06" userLabel="Foto">
+                                                    <rect key="frame" x="29" y="2" width="60" height="60"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -122,8 +122,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Consulta de Registros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B87-Nr-LTm">
+                                <rect key="frame" x="128" y="56" width="183" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCg-2s-QR5" userLabel="Regresar">
-                                <rect key="frame" x="16" y="45" width="64" height="64"/>
+                                <rect key="frame" x="16" y="28" width="64" height="64"/>
                                 <state key="normal" image="arrow-back-icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,12 +137,6 @@
                                     <action selector="AccionBtnRegresar:" destination="VYO-Zv-B8E" eventType="touchUpInside" id="G7X-gz-Oy0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Consulta de Registros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B87-Nr-LTm">
-                                <rect key="frame" x="128" y="56" width="183" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -171,15 +171,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cH-gX-09F">
-                                <rect key="frame" x="16" y="46" width="64" height="64"/>
-                                <state key="normal" image="arrow-back-icon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnRegresar:" destination="u0C-7S-lOj" eventType="touchUpInside" id="2rY-Dr-EY6"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mostrar informacion" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-zA-r56">
                                 <rect key="frame" x="149" y="53" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -201,10 +192,22 @@
                                 <color key="textColor" white="0.67220908717105265" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-Sg-zOM">
+                                <rect key="frame" x="142" y="215" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-6n-67o">
                                 <rect key="frame" x="10" y="127" width="294" height="205"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cH-gX-09F">
+                                <rect key="frame" x="16" y="28" width="64" height="64"/>
+                                <state key="normal" image="arrow-back-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRegresar:" destination="u0C-7S-lOj" eventType="touchUpInside" id="2rY-Dr-EY6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -240,15 +243,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-B1-m9m" userLabel="Regresar">
-                                <rect key="frame" x="16" y="49" width="63" height="64"/>
-                                <state key="normal" image="arrow-back-icon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="AccionBtnRegresar:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="jGC-bQ-2GB"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nuevo Registro" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JL-7Z-yvI">
                                 <rect key="frame" x="138" y="56" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -314,12 +308,21 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcU-rX-xIu" userLabel="BotonRegresarLista">
-                                <rect key="frame" x="15" y="49" width="64" height="64"/>
+                                <rect key="frame" x="15" y="28" width="64" height="64"/>
                                 <state key="normal" image="arrow-back-icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="AccionBtnLista:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="3jw-3B-tp2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-B1-m9m" userLabel="Regresar">
+                                <rect key="frame" x="15" y="28" width="63" height="64"/>
+                                <state key="normal" image="arrow-back-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AccionBtnRegresar:" destination="3Fm-ug-PKH" eventType="touchUpInside" id="jGC-bQ-2GB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -352,8 +355,8 @@
         <image name="contact-icon.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kZk-U8-FNW"/>
-        <segue reference="0iE-1D-ggQ"/>
+        <segue reference="b4u-qk-pvd"/>
         <segue reference="BeO-xh-56r"/>
+        <segue reference="0iE-1D-ggQ"/>
     </inferredMetricsTieBreakers>
 </document>

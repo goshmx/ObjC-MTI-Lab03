@@ -79,15 +79,24 @@ NSString *idTemp;
 }
 
 - (IBAction)guardarInfo:(id)sender {
-    NSString *nombre = self.inputNombre.text;
-    NSString *estado = self.inputEstado.text;
-    NSString *youtube = self.inputYoutube.text;
+    NSString *nombre = [self.inputNombre.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *estado = [self.inputEstado.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *youtube = [self.inputYoutube.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     UIImage* image = [self.Imagen image];
     NSData *imageData=UIImagePNGRepresentation(image);
     NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
     
-    if([[DBManager getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData]){
-    [self performSegueWithIdentifier:@"sagaAltaLista" sender:self];
+    if((nombre.length == 0)||(estado == 0)||(youtube == 0)){
+        alert = [[UIAlertView alloc] initWithTitle:@"Faltan campos!"
+                                           message:@"Oops! Parece que no haz llenado todos los campos!"
+                                          delegate:self
+                                 cancelButtonTitle:@"Ok"
+                                 otherButtonTitles: nil];
+        [alert show];
+    }else{
+        if([[DBManager getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData]){
+            [self performSegueWithIdentifier:@"sagaAltaLista" sender:self];
+        }
     }
 }
 

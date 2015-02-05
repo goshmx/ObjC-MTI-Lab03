@@ -7,6 +7,7 @@
 //
 
 #import "MostrarForm.h"
+#import <QuartzCore/QuartzCore.h>
 
 NSString *idSelect;
 NSMutableArray *dato;
@@ -34,9 +35,15 @@ NSMutableArray *dato;
     self.nombre.text = [dato objectAtIndex:1];
     self.estado.text = [dato objectAtIndex:2];
     self.foto.image = [UIImage imageWithData:[dato objectAtIndex:4]];
+    CALayer * l = [self.foto layer];
+    [l setMasksToBounds:YES];
+    [l setCornerRadius:50.0];
+    [l setBorderWidth:2.0];
+    [l setBorderColor:[[UIColor redColor] CGColor]];
     NSURL *url = [NSURL URLWithString:[dato objectAtIndex:3]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    
     
 }
 
